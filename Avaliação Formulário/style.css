@@ -1,0 +1,157 @@
+/* Paleta: cinza chumbo, verde limão, preto e branco */
+:root {
+  --chumbo: #3a3f44;
+  --chumbo-escuro: #2b2f33;
+  --limao: #b6f500;
+  --limao-escuro: #9ad100;
+  --preto: #000000;
+  --branco: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Fundo da página: preto */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background-color: var(--preto);
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--branco);
+}
+
+/* Formulário centralizado: cinza chumbo com faixa verde limão */
+.container {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--chumbo);
+  padding: 32px;
+  border-radius: 12px;
+  border-top: 8px solid var(--limao);
+  box-shadow: 0 8px 24px rgba(182, 245, 0, 0.15);
+}
+
+/* Título verde limão */
+h1 {
+  margin: 0 0 24px;
+  padding-bottom: 12px;
+  font-size: 1.6rem;
+  color: var(--limao);
+  border-bottom: 2px solid var(--limao);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.linha {
+  display: flex;
+  gap: 16px;
+}
+
+/* Rótulos brancos */
+label {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--branco);
+}
+
+/* Campos de entrada: fundo branco, texto preto */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--chumbo-escuro);
+  border-radius: 8px;
+  background-color: var(--branco);
+  color: var(--preto);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Efeito ao focar: borda e brilho verde limão */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--limao);
+  box-shadow: 0 0 0 3px rgba(182, 245, 0, 0.5);
+}
+
+/* Botões */
+.botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--chumbo-escuro);
+}
+
+button {
+  padding: 11px 22px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s, transform 0.15s;
+}
+
+/* Cadastrar: verde limão com texto preto */
+.btn-cadastrar {
+  background-color: var(--limao);
+  color: var(--preto);
+}
+
+.btn-cadastrar:hover {
+  background-color: var(--preto);
+  color: var(--limao);
+  border-color: var(--limao);
+  transform: translateY(-2px);
+}
+
+/* Limpar: branco com texto preto */
+.btn-limpar {
+  background-color: var(--branco);
+  color: var(--preto);
+}
+
+.btn-limpar:hover {
+  background-color: var(--preto);
+  color: var(--branco);
+  border-color: var(--branco);
+  transform: translateY(-2px);
+}
+
+/* Responsivo básico */
+@media (max-width: 520px) {
+  .container {
+    padding: 20px;
+  }
+
+
+  .linha {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .botoes {
+    flex-direction: column;
+  }
+}
